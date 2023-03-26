@@ -5,6 +5,7 @@ const menuContent = document.querySelector(".menu-content");
 const navItems = document.querySelectorAll(".nav-item");
 const contactLinks = document.querySelectorAll(".contact-links");
 const menuSocial = document.querySelector(".menu-social");
+const body = document.querySelector("body");
 
 menuBtn.addEventListener("click", () => {
     const currentState = menuBtn.getAttribute("data-state");
@@ -28,6 +29,8 @@ menuBtn.addEventListener("click", () => {
             contactLinks[i].setAttribute("aria-expanded", "true");
         }
         menuSocial.setAttribute("aria-expanded", "true");
+
+        body.classList.add("prevent-scroll");
     } else {
         menuBtn.setAttribute("data-state", "closed");
         menuBtn.setAttribute("aria-expanded", "false");
@@ -47,7 +50,17 @@ menuBtn.addEventListener("click", () => {
             contactLinks[i].setAttribute("aria-expanded", "false");
         }
         menuSocial.setAttribute("aria-expanded", "false");
+
+        body.classList.remove("prevent-scroll");
     }
 });
 
-console.log(navItem)
+
+
+let pageTitle = document.querySelector(".page-title-ctn");
+
+window.addEventListener('scroll', () => {
+    let scrollValue = window.scrollY;
+
+    pageTitle.style.marginTop = scrollValue * -1 + 'px';
+});

@@ -23,7 +23,11 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+}
+
+.prevent-scroll {
+    overflow-y: hidden;
 }
 
 a {
@@ -284,6 +288,9 @@ a {
     margin: 0;
     font-size: var(--text-96);
     font-family: 'League Gothic';
+    transform: translate(0, 150%);
+    opacity: 0;
+    animation: slideUp forwards 1s;
 }
 
 .page-title-ctn h3 {
@@ -292,4 +299,19 @@ a {
     font-family: 'League Spartan';
     font-weight: 400;
     letter-spacing: 1.2rem;
+    transform: translate(0, 150%);
+    opacity: 0;
+    animation: slideUp forwards 1s .6s;
+}
+
+
+@keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translate(0, 150%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
 }
