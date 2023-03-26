@@ -64,3 +64,24 @@ window.addEventListener('scroll', () => {
 
     pageTitle.style.marginTop = scrollValue * -1 + 'px';
 });
+
+
+
+
+function reveal() {
+    var reveals = document.querySelectorAll(".home--projects-card-ctn");
+  
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+  
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("fadeIn");
+      } else {
+        reveals[i].classList.remove("fadeIn");
+      }
+    }
+  }
+  
+  window.addEventListener("scroll", reveal);
