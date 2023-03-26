@@ -193,10 +193,20 @@ article {
     position: relative;
 }
 
-.main-nav ::selection {
+.menu-content-container ::selection {
     color: var(--menu-primary-color);
     background: var(--menu-secondary-color);
-  }
+}
+
+.light ::selection {
+    color: var(--secondary-color);
+    background: var(--primary-color);
+}
+
+.dark ::selection {
+    color: var(--primary-color);
+    background: var(--secondary-color);
+}
 
 .main-nav-headline {
     font-size: var(--text-24);
@@ -370,6 +380,7 @@ article {
 
 .tech-icon {
     width: 1.6rem;
+    user-select: none;
 }
 
 
@@ -513,4 +524,8 @@ footer a {
 
 .footer-logo-link {
     place-self: end;
+}
+
+.logo-link {
+    user-select: none;
 }
