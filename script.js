@@ -87,11 +87,3 @@ function reveal() {
   window.addEventListener("scroll", reveal);
 
 
-  let cursor = document.getElementById('cursor');
-  const onMouseMove = (e) =>{
-    cursor.style.left = e.pageX - cursor.offsetWidth/2 + 'px';
-    cursor.style.top = e.pageY - cursor.offsetHeight/2 + 'px';
-    cursor.style.display = "block";
-  }
-  document.addEventListener('mousemove', onMouseMove);
-  
