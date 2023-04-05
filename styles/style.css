@@ -422,6 +422,9 @@ article {
 
 .home--projects-card-ctn {
     display: inline-flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 30px;
     width: 100%;
     max-width: 1300px;
     justify-content: space-between;
@@ -644,4 +647,22 @@ body  {
 
 .btn:hover {
     cursor: none;
+}
+
+
+
+
+
+@media screen and (max-width: 1356px) {
+    .home--projects-card-ctn {
+        justify-content: center;
+        max-width: 800px;
+    }
+}
+
+@media screen and (max-width: 956px) {
+    .home--projects-card-ctn {
+
+        max-width: 800px;
+    }
 }
