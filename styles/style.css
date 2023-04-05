@@ -352,7 +352,7 @@ article {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -80%);
+    transform: translate(-50%, -50%);
     color: var(--secondary-color);
 }
 
@@ -365,14 +365,16 @@ article {
     opacity: 0;
     animation: slideUp forwards 1s;
     text-align: center;
+    line-height: 80%;
 }
 
 .page-title-ctn h3 {
     margin: 0;
+    margin-top: 15px;
     font-size: var(--text-32);
     font-family: 'League Spartan';
     font-weight: 400;
-    letter-spacing: 12px;
+    letter-spacing: 11px;
     transform: translate(0, 150%);
     opacity: 0;
     animation: slideUp forwards 1s .6s;
@@ -631,31 +633,6 @@ input::placeholder, textarea::placeholder {
 }
 
 
-
-body  {
-    cursor: none;
-}
-
-#cursor {
-    content: "";
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-color: rgba(118, 118, 118, 0.5);
-    display: none;
-    position: absolute;
-    z-index: 1000;
-    pointer-events: none;
-}
-
-.btn:hover {
-    cursor: none;
-}
-
-
-
-
-
 @media screen and (max-width: 1356px) {
     .home--projects-card-ctn {
         justify-content: center;
@@ -675,7 +652,7 @@ body  {
         align-self: center;
         justify-self: start;
     }
-    .footer-logo-link img {
+    .logo-link img {
         width: 58px;
     }
     .footer-links {
@@ -711,5 +688,8 @@ body  {
 @media screen and (max-width: 500px) {
     .home--skills-ctn {
         grid-template: "a b";
+    }
+    .page-title-ctn h1 {
+        font-size: var(--text-80);
     }
 }
