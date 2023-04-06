@@ -14,6 +14,7 @@
     --text-20: 2.0rem;
     --text-24: 2.4rem;
     --text-32: 3.2rem;
+    --text-48: 4.8rem;
     --text-64: 6.4rem;
     --text-80: 8.0rem;
     --text-96: 9.6rem;
@@ -127,7 +128,7 @@ article {
 
 .menu-btn-ctn {
     position: relative;
-    width: 104px;
+    width: 64px;
 }
 
 .menu-btn {
@@ -145,7 +146,7 @@ article {
 }
 
 .menu-btn:hover {
-    background: var(--menu-secondary-color);
+    background-color: var(--menu-secondary-color);
     cursor: pointer;
 }
 
@@ -209,6 +210,8 @@ article {
     display: none;
     justify-content: center;
     align-items: center;
+    padding-inline: var(--padding-out);
+    box-sizing: border-box;
 }
 
 .menu-content-container {
@@ -263,19 +266,19 @@ article {
     transition: margin .5s;
 }
 
-.main-nav-list li a:hover {
-    margin-left: 20px;
+.nav-item{
+    transform: translate(100%, 0);
+    opacity: 0;
 }
 
-.main-nav-list li a{
+.nav-item a {
     font-size: var(--text-64);
     font-weight: 700;
     color: var(--menu-secondary-color);
 }
 
-.nav-item{
-    transform: translate(100%, 0);
-    opacity: 0;
+.nav-item a:hover {
+    margin-left: 20px;
 }
 
 .nav-item[aria-expanded="true"] {
@@ -292,6 +295,9 @@ article {
     transform: translate(100%, 0);
     opacity: 0;
     transition: color .3s;
+    font-size: var(--text-24);
+    font-weight: 600;
+    color: var(--menu-secondary-color);
 }
 
 .contact-links[aria-expanded="true"] {
@@ -307,12 +313,6 @@ article {
       opacity: 1;
       transform: translate(0, 0)
     }
-}
-
-.menu-contact a {
-    font-size: var(--text-24);
-    font-weight: 600;
-    color: var(--menu-secondary-color);
 }
 
 .contact-links:hover {
@@ -701,6 +701,23 @@ input::placeholder, textarea::placeholder {
         width: 298px;
         height: 380px;
     }
+    .nav-item a {
+        font-size: var(--text-48);
+    }
+    .contact-links {
+        font-size: var(--text-20);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .menu-content-container {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 60px;
+    }
+    .menu-contact {
+        align-self: flex-start;
+    }
 }
 
 @media screen and (max-width: 610px) {
@@ -723,5 +740,4 @@ input::placeholder, textarea::placeholder {
         font-size: var(--text-80);
     }
 }
-
 

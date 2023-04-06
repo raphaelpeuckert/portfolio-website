@@ -6,6 +6,12 @@ const navItems = document.querySelectorAll(".nav-item");
 const contactLinks = document.querySelectorAll(".contact-links");
 const menuSocial = document.querySelector(".menu-social");
 const body = document.querySelector("body");
+const hamburger = document.querySelector(".hamburger");
+
+
+function removeFocus(){
+    document.menuBtn.blur();  
+}
 
 menuBtn.addEventListener("click", () => {
     const currentState = menuBtn.getAttribute("data-state");
@@ -31,6 +37,11 @@ menuBtn.addEventListener("click", () => {
         menuSocial.setAttribute("aria-expanded", "true");
 
         body.classList.add("prevent-scroll");
+
+        setTimeout(function(){
+            menuBtn.style.backgroundColor = "var(--menu-primary-color)";
+            hamburger.style.stroke = "var(--menu-secondary-color)";
+        }, 300);
     } else {
         menuBtn.setAttribute("data-state", "closed");
         menuBtn.setAttribute("aria-expanded", "false");
@@ -52,6 +63,11 @@ menuBtn.addEventListener("click", () => {
         menuSocial.setAttribute("aria-expanded", "false");
 
         body.classList.remove("prevent-scroll");
+
+        setTimeout(function(){
+            menuBtn.style.backgroundColor = "var(--menu-primary-color)";
+            hamburger.style.stroke = "var(--menu-secondary-color)";
+        }, 300);
     }
 });
 
@@ -72,19 +88,18 @@ function reveal() {
     var reveals = document.querySelectorAll(".home--projects-card-ctn");
   
     for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 150;
-  
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add("fadeIn");
-      } else {
-        reveals[i].classList.remove("fadeIn");
-      }
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+    
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("fadeIn");
+        } else {
+            reveals[i].classList.remove("fadeIn");
+        }
     }
-  }
+}
   
-  window.addEventListener("scroll", reveal);
-
+window.addEventListener("scroll", reveal);
 
 
