@@ -227,6 +227,10 @@ article {
     background: var(--menu-secondary-color);
 }
 
+.light {
+    background-color: var(--secondary-color);
+}
+
 .light ::selection {
     color: var(--secondary-color);
     background: var(--primary-color);
