@@ -80,6 +80,8 @@ article {
     background-color: #D9D9D9;
     transition: background-color .3s;
     border: none;
+    font-size: var(--text-16);
+    font-family: 'Roboto';
 }
 
 .btn:hover {
@@ -456,6 +458,7 @@ article {
     padding: 20px 30px;
     font-family: 'Roboto';
     box-sizing: border-box;
+    place-self: center;
 }
 
 .project-card:hover {
@@ -586,12 +589,14 @@ label {
     font-family: 'League Spartan';
     font-weight: 700;
     font-size: var(--text-16);
+
 }
 
 input, textarea {
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid var(--primary-color);
+    border-radius: 0;
     resize: none;
     padding: 0;
     padding-left: 5px;
@@ -620,7 +625,7 @@ input::placeholder, textarea::placeholder {
 
 .contact-info-ctn {
     display: flex;
-    gap: 100px;
+    column-gap: 100px;
     width: 100%;
 }
 
@@ -636,6 +641,11 @@ input::placeholder, textarea::placeholder {
 @media screen and (max-width: 1356px) {
     .home--projects-card-ctn {
         justify-content: center;
+        max-width: 800px;
+    }
+    .projects--projects-card-ctn {
+        grid-template: "a b";
+        row-gap: 30px;
         max-width: 800px;
     }
 }
@@ -662,6 +672,14 @@ input::placeholder, textarea::placeholder {
     .footer-contact-ctn {
         grid-area: 2 / 2 / 3 / 4;
     }
+
+    form {
+        gap: 40px;
+    }
+    .contact-info-ctn {
+        flex-direction: column;
+        row-gap: 40px;
+    }
 }
 
 @media screen and (max-width: 990px) {
@@ -670,6 +688,14 @@ input::placeholder, textarea::placeholder {
     }
     .home--projects-card-ctn {
         max-width: 800px;
+    }
+    .projects--projects-card-ctn {
+        grid-template: "a";
+        max-width: 800px;
+    }
+    .project-card {
+        width: 298px;
+        height: 380px;
     }
 }
 
@@ -693,3 +719,5 @@ input::placeholder, textarea::placeholder {
         font-size: var(--text-80);
     }
 }
+
+
