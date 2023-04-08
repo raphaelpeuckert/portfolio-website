@@ -505,7 +505,6 @@ article {
 }
 
 
-
 footer {
     height: 400px;
     font-family: 'Roboto';
@@ -740,4 +739,3 @@ input::placeholder, textarea::placeholder {
         font-size: var(--text-80);
     }
 }
-

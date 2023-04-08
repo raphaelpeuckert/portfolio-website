@@ -1,0 +1,17 @@
+{
+  "name": "rappeu",
+  "version": "1.0.0",
+  "description": "Raphael's webdev portfolio",
+  "main": "script.js",
+  "scripts": {
+    "prefix": "postcss ./styles/style.css --use autoprefixer -d ./dest/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0"
+  }
+}
