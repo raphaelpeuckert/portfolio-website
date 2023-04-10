@@ -1,5 +1,5 @@
-const menuBtn = document.querySelector(".menu-btn");
-const menuCtn = document.querySelector(".menu-ctn");
+const menuButton = document.querySelector(".menu-button");
+const menuContainer = document.querySelector(".menu-container");
 const root = document.querySelector(":root");
 const menuContent = document.querySelector(".menu-content");
 const navItems = document.querySelectorAll(".nav-item");
@@ -10,17 +10,17 @@ const hamburger = document.querySelector(".hamburger");
 
 
 function removeFocus(){
-    document.menuBtn.blur();  
+    document.menuButton.blur();  
 }
 
-menuBtn.addEventListener("click", () => {
-    const currentState = menuBtn.getAttribute("data-state");
+menuButton.addEventListener("click", () => {
+    const currentState = menuButton.getAttribute("data-state");
 
     if(!currentState || currentState == "closed") {
-        menuBtn.setAttribute("data-state", "opened");
-        menuBtn.setAttribute("aria-expanded", "true");
+        menuButton.setAttribute("data-state", "opened");
+        menuButton.setAttribute("aria-expanded", "true");
         
-        menuCtn.setAttribute("aria-expanded", "true");
+        menuContainer.setAttribute("aria-expanded", "true");
 
         root.style.setProperty("--menu-primary-color", "white");
         root.style.setProperty("--menu-secondary-color", "black");
@@ -39,14 +39,14 @@ menuBtn.addEventListener("click", () => {
         body.classList.add("prevent-scroll");
 
         setTimeout(function(){
-            menuBtn.style.backgroundColor = "var(--menu-primary-color)";
+            menuButton.style.backgroundColor = "var(--menu-primary-color)";
             hamburger.style.stroke = "var(--menu-secondary-color)";
         }, 300);
     } else {
-        menuBtn.setAttribute("data-state", "closed");
-        menuBtn.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("data-state", "closed");
+        menuButton.setAttribute("aria-expanded", "false");
 
-        menuCtn.setAttribute("aria-expanded", "false");
+        menuContainer.setAttribute("aria-expanded", "false");
 
         root.style.setProperty("--menu-primary-color", "black");
         root.style.setProperty("--menu-secondary-color", "white");
@@ -65,7 +65,7 @@ menuBtn.addEventListener("click", () => {
         body.classList.remove("prevent-scroll");
 
         setTimeout(function(){
-            menuBtn.style.backgroundColor = "var(--menu-primary-color)";
+            menuButton.style.backgroundColor = "var(--menu-primary-color)";
             hamburger.style.stroke = "var(--menu-secondary-color)";
         }, 300);
     }
@@ -73,7 +73,7 @@ menuBtn.addEventListener("click", () => {
 
 
 
-let pageTitle = document.querySelector(".page-title-ctn");
+let pageTitle = document.querySelector(".page-title-container");
 
 window.addEventListener('scroll', () => {
     let scrollValue = window.scrollY;
@@ -85,7 +85,7 @@ window.addEventListener('scroll', () => {
 
 
 function reveal() {
-    var reveals = document.querySelectorAll(".home--projects-card-ctn");
+    var reveals = document.querySelectorAll(".home--projects-card-container");
   
     for (var i = 0; i < reveals.length; i++) {
         var windowHeight = window.innerHeight;
