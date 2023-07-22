@@ -515,15 +515,19 @@ article {
     background-position: bottom;
     background-repeat: no-repeat;
     color: var(--secondary-color);
-    padding: 20px 30px;
     font-family: 'Roboto';
     box-sizing: border-box;
     place-self: center;
+    position: relative;
 }
 
 .project-card:hover {
     -webkit-animation: boing .5s forwards;
             animation: boing .5s forwards;
+}
+
+.project-card:hover .project-link {
+    backdrop-filter: brightness(100%);
 }
 
 @-webkit-keyframes boing {
@@ -555,6 +559,32 @@ article {
         background-size: 105%;
     }
 }
+
+.project-link {
+    position: absolute;
+    inset: 0;
+    text-decoration: none;
+    color: var(--secondary-color);
+    backdrop-filter: brightness(50%);
+    transition: backdrop-filter .25s ease-in-out;
+}
+
+.project-text-background {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 30px;
+}
+
+.pomodoro-app {
+    background-image: url('../assets/images/pomodoro.png');
+}
+
+
+
+
+
+
+
+
 
 .project-card h3 {
     font-size: var(--text-20);
